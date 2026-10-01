@@ -3,8 +3,9 @@ from django.urls import include, path
 from rest_framework import routers
 from rockapi.views import (
     register_user, login_user,
-    TypeView, RockView, health_check
+    TypeView, RockView
 )
+from rockapi.views.health_check import health_check
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'types', TypeView, 'type')
